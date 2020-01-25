@@ -34,6 +34,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 The VueStacks Vuex Firebase chat demo utilizes Vuexfire, Firebase, and Vue-Router to post messages to a chatroom in real-time.
 
+Learn more about the Vuexfire package here: https://vuefire.vuejs.org/vuexfire/ 
+
 This demo utilizes Materialize CSS for general styling. See the CDN located in ```public/index.html```
 
 See chat component in ```components/Chat.vue```
