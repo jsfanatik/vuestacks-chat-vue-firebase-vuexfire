@@ -5,32 +5,28 @@
     </div><br>
     <div class="card">
       <div class="card-content">
-        <div>
-          <ul class="messages" v-chat-scroll>
-            <li class="chat-message" v-for="message in messages" :key="message.id">
-              <div class="right-bubble" v-if="message.name === name">
-                <span class="green-text">{{ message.name }}&nbsp;</span>
-                <span class="grey-text text-darken-3">{{ message.content }}</span>
-                <span class="grey-text time">{{ message.timestamp | moment }}</span>
-              </div>
-              <div class="left-bubble right-align" v-if="message.name !== name">
-                <span class="green-text">{{ message.name }}&nbsp;</span>
-                <span class="grey-text text-darken-3">{{ message.content }}</span>
-                <span class="grey-text time">{{ message.timestamp | moment }}</span>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <ul class="messages" v-chat-scroll>
+          <li class="chat-message" v-for="message in messages" :key="message.id">
+            <div class="right-bubble" v-if="message.name === name">
+              <span class="green-text">{{ message.name }}&nbsp;</span>
+              <span class="grey-text text-darken-3">{{ message.content }}</span>
+              <span class="grey-text time">{{ message.timestamp | moment }}</span>
+            </div>
+            <div class="left-bubble right-align" v-if="message.name !== name">
+              <span class="green-text">{{ message.name }}&nbsp;</span>
+              <span class="grey-text text-darken-3">{{ message.content }}</span>
+              <span class="grey-text time">{{ message.timestamp | moment }}</span>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="card-action">
-        <div class="new-message">
-          <form>
-            <label for="new-message">New Message from {{ name }} (enter to add):</label>
-            <input type="text" name="new-message" v-model="newMessage"/>
-            <p class="red-text" v-if="feedback">{{ feedback }}</p>
-            <button class="btn" type="submit" name="button" @click.prevent="addMessage">Add</button>
-          </form>
-        </div>
+      <div class="card-content">
+        <form @submit.prevent="addMessage">
+          <label>New Message from <strong>{{ name }}</strong> (enter to add):</label>
+          <input type="text" v-model="newMessage"/>
+          <p class="red-text" v-if="feedback">{{ feedback }}</p>
+          <button class="btn green" name="button">Add</button>
+        </form>
       </div>
     </div>
   </div>
@@ -49,6 +45,9 @@ export default {
       feedback: null
     }
   },
+  computed: mapState([
+    'messages'
+  ]),
   mounted() {
     this.getMessage()
   },
@@ -75,10 +74,7 @@ export default {
         this.feedback = "you must enter a message"
       }
     }
-  },
-  computed: mapState([
-    'messages'
-  ])
+  }
 }
 </script>
 
@@ -86,7 +82,7 @@ export default {
 .container {
   border-radius: 5px;
 }
-.chat h2{
+.chat h2 {
   font-size: 2.6em;
   margin-bottom: 40px;
 }
