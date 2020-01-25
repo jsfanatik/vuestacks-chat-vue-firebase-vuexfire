@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="chat container">
     <div class="center">
-      <router-link to="/" class="btn green">Return to Home</router-link>
+      <router-link to="/" class="btn green">Return to HOME</router-link>
     </div><br>
     <div class="card">
       <div class="card-content">
