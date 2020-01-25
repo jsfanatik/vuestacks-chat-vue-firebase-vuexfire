@@ -1,4 +1,4 @@
-# vuestacks-chat-vue-vuex-firebase
+# vuestacks-chat-vue-vuex-firebase-vuexfire
 
 ![alt text](https://raw.githubusercontent.com/jsfanatik/vuestacks-chat-mevn-vuex-mongoose/master/src/assets/vuestacks-chat.JPG)
 
@@ -32,7 +32,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Overview
 
-The VueStacks Vuex Firebase chat demo utilizes Vuex, Firebase, and Vue-Router to post messages in a chatroom.
+The VueStacks Vuex Firebase chat demo utilizes Vuexfire, Firebase, and Vue-Router to post messages to a chatroom in real-time.
 
 This demo utilizes Materialize CSS for general styling. See the CDN located in ```public/index.html```
 
