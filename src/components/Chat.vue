@@ -22,7 +22,7 @@
       </div>
       <div class="card-content">
         <form @submit.prevent="addMessage">
-          <label>New Message from <strong>{{ name }}</strong> (enter to add):</label>
+          <label>New Message from {{ name }} (enter to add):</label>
           <input type="text" v-model="newMessage"/>
           <p class="red-text" v-if="feedback">{{ feedback }}</p>
           <button class="btn green" name="button">Add</button>
@@ -67,9 +67,8 @@ export default {
           name: this.name,
           timestamp: Date.now()
         })
-        this.newMessage = null
-        this.feedback = null
-        this.getMessage()
+        this.newMessage = ''
+        this.feedback = ''
       } else {
         this.feedback = "you must enter a message"
       }
